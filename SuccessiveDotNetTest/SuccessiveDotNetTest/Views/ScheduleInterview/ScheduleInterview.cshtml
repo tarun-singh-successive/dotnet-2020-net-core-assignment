@@ -1,0 +1,126 @@
+﻿@model SuccessiveDotNetTest.Models.ScheduleInterviewModal;
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="~/css/bootstrap.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link href="~/css/StyleSheet.css" rel="stylesheet" />
+<style>
+ 
+</style>
+<center>
+    <h4>Candidate- Interview Schedule Platform</h4>
+    <hr />
+</center>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-7">
+        <p class="justify-content-center">@ViewBag.SuccessMessage</p>
+        
+        <form asp-action="Create" class="form-horizontal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label col-sm-5">Candidate List</label>
+                <div class="col-sm-6">
+                    <select class="form-control" id="selectCandidate" onchange="GetData(this.value)"></select>
+                </div>
+                <div class="col-sm-1">
+                    <span class="checkbox checkbox-inline custom-checkbox"> <input type="checkbox" onclick="ClearAll()" id="addNew" /> New</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label col-sm-5"></label>
+                <div class="col-sm-7">
+                    <input asp-for="FirstName" id="firstName" class="form-control" onkeyup="ValidateFirstName(this.value)"/>
+                    <span asp-validation-for="FirstName" class="text-danger firstName"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label col-sm-5"></label>
+                <div class="col-sm-7">
+                    <input asp-for="LastName" id="lastName" onkeyup="ValidateLastName(this.value)"  class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger lastName"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="DOB" class="control-label col-sm-5"></label>
+                <div class="col-sm-7">
+                    <input asp-for="DOB" id="dob" class="form-control iconspace" />
+                    <span class="icon fa fa-calendar fa-lg"></span>
+                    <span asp-validation-for="DOB" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Experience" class="control-label col-sm-5"></label>
+                <div class="col-sm-7">
+                    <input asp-for="Experience" id="exp" class="form-control" />
+                    <span asp-validation-for="Experience" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mobile" class="control-label col-sm-5"></label>
+                <div class="col-sm-7">
+                    <input asp-for="Mobile" id="mobile" class="form-control" />
+                    <span asp-validation-for="Mobile" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label col-sm-5"></label>
+                <div class="col-sm-7">
+                    <input asp-for="Email" id="email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label col-sm-5"></label>
+                <div class="col-sm-7">
+                    <input asp-for="Date" class="form-control iconspace" />
+                    <span class="icon fa fa-calendar fa-lg"></span>
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeFrom" class="control-label col-sm-5"></label>
+                <div class="col-sm-7">
+                    <input asp-for="TimeFrom" class="form-control iconspace" />
+                    <span class="icon fa fa-clock-o fa-lg"></span>
+                    <span asp-validation-for="TimeFrom" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeTo" class="control-label col-sm-5"></label>
+                <div class="col-sm-7">
+                    <input asp-for="TimeTo" class="form-control iconspace" />
+                    <span class="icon fa fa-clock-o fa-lg"></span>
+                    @*<span asp-validation-for="TimeTo" class="text-danger"></span>*@
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="InterviewerName" class="control-label col-sm-5"></label>
+                <div class="col-sm-7">
+                    <input asp-for="InterviewerName" class="form-control" />
+                    <span asp-validation-for="InterviewerName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="control-label col-sm-5"></div>
+                <div class="col-sm-7">
+                    <input type="submit" value="SAVE" class="btn btn-success " />
+                    <a asp-action="ScheduledInterviewDetails" class="btn btn-primary">CANCEL</a>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<br /><br />
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
