@@ -1,0 +1,14 @@
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\bin\Debug\netcoreapp2.2\Schedule.deps.json
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\bin\Debug\netcoreapp2.2\Schedule.runtimeconfig.json
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\bin\Debug\netcoreapp2.2\Schedule.runtimeconfig.dev.json
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\bin\Debug\netcoreapp2.2\Schedule.dll
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\obj\Debug\netcoreapp2.2\Schedule.csprojAssemblyReference.cache
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\obj\Debug\netcoreapp2.2\Schedule.csproj.CoreCompileInputs.cache
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\obj\Debug\netcoreapp2.2\Schedule.RazorAssemblyInfo.cache
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\obj\Debug\netcoreapp2.2\Schedule.RazorAssemblyInfo.cs
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\obj\Debug\netcoreapp2.2\Schedule.AssemblyInfoInputs.cache
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\obj\Debug\netcoreapp2.2\Schedule.AssemblyInfo.cs
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\obj\Debug\netcoreapp2.2\Schedule.RazorTargetAssemblyInfo.cache
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\bin\Debug\netcoreapp2.2\Schedule.pdb
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\obj\Debug\netcoreapp2.2\Schedule.dll
+C:\Users\akash\Desktop\Assignment Test\dotnet-2020-net-core-assignment\SuccessiveDotNetTests\Schedule\obj\Debug\netcoreapp2.2\Schedule.pdb

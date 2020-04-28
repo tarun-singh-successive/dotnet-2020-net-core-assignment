@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Schedule.Entities.InterviewSchedule>
+@{
+    ViewData["Title"] = "ScheduledInterviewDetails";
+}
+
+<h1>ScheduledInterviewDetails</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.candidates.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.candidates.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.candidates.Experience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeFrom)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.candidates.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.candidates.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.candidates.Experience)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeFrom)
+                </td>
+               
+                <td>
+                   |
+                    <a asp-action="Index" >Back</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
