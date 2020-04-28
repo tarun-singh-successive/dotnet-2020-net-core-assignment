@@ -35,10 +35,8 @@ namespace SuccessiveDotNetTest.Controllers
             //var exist = _context.EmailExists(modal.Email);
             Candidates candidate = new Candidates();
             InterviewSchedules schedule = new InterviewSchedules();
-            if (_context.EmailExists(modal.Email)==true)
+            if (_context.EmailExists(modal.Email)==false)
             {
-                try
-                {
                     candidate.FirstName = modal.FirstName;
                     candidate.LastName = modal.LastName;
                     candidate.DOB = modal.DOB;
@@ -59,26 +57,27 @@ namespace SuccessiveDotNetTest.Controllers
                     await _context.Save();
                     ViewBag.SuccessMessage = "Interview is Scheduled Successfully";
                     return RedirectToAction(nameof(ScheduleInterview));
-                }
-                catch
-                {
-                    ViewBag.SuccessMessage = "Candidate Email already exist";
                    
-                    return View("ScheduleInterview");
-                }
+                //}
+                //catch
+                //{
+                //    ViewBag.SuccessMessage = "Candidate Email already exist";
+                   
+                //    return View("ScheduleInterview");
+                //}
                
             }
             else {
-                int id = _context.CandidateList().Where(e => e.Email == modal.Email).Select(i => i.Id).First();
-                schedule.CandidateId = id;
-                schedule.Date = modal.Date;
-                schedule.TimeFrom = modal.TimeFrom;
-                schedule.TimeTo = modal.TimeTo;
-                schedule.InterviewerName = modal.InterviewerName;
-                _context.AddInterviewDetails(schedule);
-                await _context.Save();
-                ViewBag.SuccessMessage = "Interview is Scheduled Successfully";
-                return View("ScheduleInterview");
+                    int id = _context.CandidateList().Where(e => e.Email == modal.Email).Select(i => i.Id).First();
+                    schedule.CandidateId = id;
+                    schedule.Date = modal.Date;
+                    schedule.TimeFrom = modal.TimeFrom;
+                    schedule.TimeTo = modal.TimeTo;
+                    schedule.InterviewerName = modal.InterviewerName;
+                    _context.AddInterviewDetails(schedule);
+                    await _context.Save();
+                    ViewBag.SuccessMessage = "Interview is Scheduled Successfully";
+                    return RedirectToAction(nameof(ScheduleInterview));
             }
         }
 
@@ -88,11 +87,11 @@ namespace SuccessiveDotNetTest.Controllers
             var result = _context.GetInterviewDataWithCandidate().Select(e => new ScheduleInterviewModal
             {
                 FirstName = e.FirstName,
-                LastName =e.LastName,
+                LastName = e.LastName,
                 Email = e.Email,
                 Experience = e.Experience,
                 Date = e.InterviewSchedules.OrderByDescending(d => d.Date).FirstOrDefault().Date,
-                TimeFrom =e.InterviewSchedules.OrderByDescending(d => d.TimeFrom).FirstOrDefault().TimeFrom,
+                TimeFrom = e.InterviewSchedules.OrderByDescending(d => d.TimeFrom).FirstOrDefault().TimeFrom,
                 TimeTo = e.InterviewSchedules.OrderByDescending(d => d.TimeTo).FirstOrDefault().TimeTo,
                 InterviewerName = e.InterviewSchedules.OrderByDescending(d => d.InterviewerName).FirstOrDefault().InterviewerName
             }).ToList();

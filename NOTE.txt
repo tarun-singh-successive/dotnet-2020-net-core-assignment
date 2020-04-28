@@ -2,5 +2,5 @@ Implemented All the functionalities including Ajax Dropdown having all the emplo
 Validations are applied.
 Also Last InterviewSchedule Date Employee Rocords is working as per requirements given to us.
 
-Not Done : Only Convert Experience in Months to years not done because when getting date from database and converting to its corresponding modal class it is not possibel to declare
+Not Done : 1.Only Convert Experience in Months to years not done because when getting date from database and converting to its corresponding modal class it is not possibel to declare
 any variable that will help me to convert months to years but its not possible.
