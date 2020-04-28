@@ -1,0 +1,9 @@
+C:\Users\yasha\source\repos\SuccessiveDotNetTest\ClassLibrary1\bin\Debug\netcoreapp2.2\DataLayer.deps.json
+C:\Users\yasha\source\repos\SuccessiveDotNetTest\ClassLibrary1\bin\Debug\netcoreapp2.2\DataLayer.dll
+C:\Users\yasha\source\repos\SuccessiveDotNetTest\ClassLibrary1\obj\Debug\netcoreapp2.2\DataLayer.csprojAssemblyReference.cache
+C:\Users\yasha\source\repos\SuccessiveDotNetTest\ClassLibrary1\obj\Debug\netcoreapp2.2\DataLayer.AssemblyInfoInputs.cache
+C:\Users\yasha\source\repos\SuccessiveDotNetTest\ClassLibrary1\obj\Debug\netcoreapp2.2\DataLayer.AssemblyInfo.cs
+C:\Users\yasha\source\repos\SuccessiveDotNetTest\ClassLibrary1\obj\Debug\netcoreapp2.2\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\yasha\source\repos\SuccessiveDotNetTest\ClassLibrary1\bin\Debug\netcoreapp2.2\DataLayer.pdb
+C:\Users\yasha\source\repos\SuccessiveDotNetTest\ClassLibrary1\obj\Debug\netcoreapp2.2\DataLayer.dll
+C:\Users\yasha\source\repos\SuccessiveDotNetTest\ClassLibrary1\obj\Debug\netcoreapp2.2\DataLayer.pdb

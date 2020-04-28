@@ -1,0 +1,221 @@
+﻿@model SuccessiveDotNetTest.Models.Registeration
+
+@{
+    ViewData["Title"] = "ScheduleInterview";
+}
+
+<h1>ScheduleInterview</h1>
+<hr />
+
+<div class="form-group row col-md-6">
+    <label for="Candidate" class="col-md-5 font-weight-bold col-form-label">Candidates</label>
+    <div class="col-md-7">
+        <select for="Candidate" class="form-control" onchange="GetData(this.value)" id="candidate" asp-items="ViewBag.candidate"></select>
+    </div>
+</div>
+<input type="checkbox" id="new" name="NewCandidate" value="NewCandidate"/>
+<label for="NewCandidate">New Candidate</label>
+<div class="row" id="create">
+    <form asp-action="ScheduleInterview">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <label asp-for="FirstName" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="LastName" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Email" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="DOB" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="DOB" class="form-control" type="text" id="dob" />
+                <span asp-validation-for="DOB" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Mobile" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Experience" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="Experience" class="form-control" />
+                <span asp-validation-for="Experience" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Date" class="col-md-5 font-weight-bold control-label">Schedule Date</label>
+            <div class="col-md-7">
+                <input asp-for="Date" class="form-control" type="text" id="date" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="TimeTo" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="TimeTo" class="form-control" id="timeTo" />
+                <span asp-validation-for="TimeTo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="TimeFrom" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="TimeFrom" class="form-control" id="timeFrom" />
+                <span asp-validation-for="TimeFrom" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="InterviewerName" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="InterviewerName" class="form-control" />
+                <span asp-validation-for="InterviewerName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group ">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+<div class="row" id="edit">
+    <form asp-action="UpdateData">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <label asp-for="FirstName" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="FirstName" class="form-control" id="firstName" name="FirstName" disabled />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="LastName" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="LastName" class="form-control" id="lastName" name="LastName" disabled />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Email" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="Email" class="form-control" name="Email" id="email" disabled />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="DOB" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="DOB" class="form-control" name="DOB" type="text" id="dobe" disabled />
+                <span asp-validation-for="DOB" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Mobile" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="Mobile" class="form-control" name="Mobile" id="mobile" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Experience" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="Experience" class="form-control" name="Experience" id="experience" />
+                <span asp-validation-for="Experience" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Date" class="col-md-5 font-weight-bold control-label">Schedule Date</label>
+            <div class="col-md-7">
+                <input asp-for="Date" class="form-control" type="text" name="Date" id="date" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="TimeTo" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="TimeTo" class="form-control" id="timeTo" name="TimeTo" />
+                <span asp-validation-for="TimeTo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="TimeFrom" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="TimeFrom" class="form-control" id="timeFrom" name="TimeFrom" />
+                <span asp-validation-for="TimeFrom" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="InterviewerName" class="col-md-5 font-weight-bold control-label"></label>
+            <div class="col-md-7">
+                <input asp-for="InterviewerName" class="form-control" />
+                <span asp-validation-for="InterviewerName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#create').hide();
+        $('#edit').show();
+        $('#new').change(function () {
+            if (this.checked) {
+                $('#edit').hide();
+                $('#create').show();
+                $(this).prop("checked");
+            }
+            else {
+                $('#create').hide();
+                $('#edit').show();
+                $(this).prop("unchecked");
+            }
+        
+        });
+    });
+    $("#dobe,#date,#DOB,#DATE").datepicker({
+    });
+    function GetData(value) {
+        console.log(value);
+        $.getJSON({
+            type: 'Get',
+            url: ' https://localhost:44347/api/candidates/' + value,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                console.log(data.firstName);
+                document.getElementById('firstName').value= data.firstName;
+                document.getElementById('lastName').value= data.lastName;
+                document.getElementById('mobile').value= data.mobile;
+                document.getElementById('experience').value= data.experience;
+                document.getElementById('dobe').value= data.dob;
+                document.getElementById('email').value= data.email;
+           
+            }
+        });
+    }
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
